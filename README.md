@@ -29,15 +29,24 @@ opening claude.ai or chatgpt.com.
 
 ## Installation
 
-### Quickest path
+### Quickest path — prebuilt DMG
 
-1. Download the latest `AI-Usage-*.dmg` from
-   [Releases](../../releases) (signed with Developer ID and notarized).
-2. Open the DMG → drag **AI Usage** to `/Applications`.
-3. Launch **AI Usage**. The first run sets up the widget extension with the
-   system.
+**[⬇ Download AI-Usage-1.0.dmg](https://bgmcuxqagdhdyg6v.public.blob.vercel-storage.com/AI-Usage-1.0.dmg)**
+(~3 MB)
+
+This is the official binary, signed with my Apple Developer ID certificate
+and notarized + stapled by Apple. macOS will open it cleanly with no
+Gatekeeper warning, no right-click → Open dance, no `xattr` removals.
+
+1. Download and open the DMG.
+2. Drag **AI Usage** to `/Applications`.
+3. Launch **AI Usage**. The first run registers the widget extension with
+   the system.
 4. Open Notification Center → **Edit Widgets** → search **AI Usage** →
    pick Small, Medium, or Large.
+
+If you'd rather not trust a stranger's binary, the build-from-source path
+below produces the exact same app from the code in this repo.
 
 ### Build from source
 
