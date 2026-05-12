@@ -8,11 +8,13 @@ struct LargeWidgetView: View {
         VStack(alignment: .leading, spacing: 6) {
             header
 
-            // Two ring blocks at the top — natural height, no greedy expansion.
-            HStack(spacing: 10) {
+            // Two ring blocks at the top — equal heights via maxHeight + .top
+            // alignment so the orange and blue borders line up exactly.
+            HStack(alignment: .top, spacing: 10) {
                 if entry.showClaude { claudeCard }
                 if entry.showCodex  { codexCard  }
             }
+            .fixedSize(horizontal: false, vertical: true)
 
             // Full Claude plan panel.
             VStack(alignment: .leading, spacing: 5) {
@@ -205,7 +207,7 @@ struct LargeWidgetView: View {
                 .foregroundStyle(.white.opacity(0.5))
                 .lineLimit(1)
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, 8)
         .padding(.horizontal, 10)
         .background(
